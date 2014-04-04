@@ -1,0 +1,23 @@
+<article ng-style="{ left: ((widget.x - 1) * 240)+'px' , top: ((widget.y - 1) * 240)+'px'}" class="widget custom-widgets ui-draggable loaded" style="width: auto;">
+    <div class="widget-inner  widget-size-1x2 large-screen">
+        <header>
+            <h1>{{widget.title}}</h1>
+        </header>
+        <section class="widget-body list-widget text-widget">
+            <div class="widget-canvas">
+                <google-map center="map.center" zoom="map.zoom" draggable="false" options="{disableDefaultUI: false, streetViewControl: false,zoomControl:false,mapTypeControl: false, styles: map.style}">
+                    <layer type="TrafficLayer"></layer>
+                    <marker
+                            icon="'/images/traffic/home.png'"
+                        coords="{latitude:35.619637,longitude:-97.4801606}">
+                    </marker>
+                    <marker
+                        icon="'/images/traffic/bricktown.png'"
+                        coords="{latitude:35.4678339,longitude:-97.478500}">      
+                    </marker>
+                </google-map>
+            </div>
+        </section>
+    </div>
+
+</article>

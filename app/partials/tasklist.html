@@ -1,0 +1,32 @@
+<article ng-style="{ left: (widget.x-1) * 240, top: (widget.y-1) * 240}" class="widget custom-widgets ui-draggable loaded" style="width: auto;">
+    <div class="widget-inner  widget-size-1x2 large-screen">
+        <header>
+            <h1>{{widget.title}}</h1>
+        </header>
+        <section class="widget-body list-widget text-widget">
+            <div class="widget-canvas">
+                <ul>
+                    <li ng-repeat="item in widget.value">
+                        <div style="margin-bottom: 5px;">
+                            <!--<img style="float:left;margin-top:2px;margin-right: 2px" ng-show="item.status == 'completed'" width="10" src="../img/tasks/checked.png"/>-->
+                            <!--<img style="float:left;margin-top:2px;margin-right: 2px" ng-show="item.status == 'needsAction'" width="10" src="../img/tasks/unchecked.png"/>-->
+                            <h3 style="margin-bottom: 10px">{{item.title}}</h3>
+                            <!--<p>Added by Adam</p>-->
+                            <div style="clear:both;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- .widget-canvas -->
+        </section> 
+        <footer style="display: none;">
+            <div class="inner">
+                <span>Custom Widgets</span>
+                <ul class="widget-actions">
+                    <li><a class="edit" href="#" title="Edit"></a></li>
+                    <li><a class="copy" href="#" title="Copy"></a></li>
+                    <li><a class="delete" href="#"></a></li>  
+                </ul>
+            </div>
+        </footer>
+    </div><!-- .widget-inner -->
+</article>

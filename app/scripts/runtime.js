@@ -10,7 +10,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
         bounds: {
             width: width,
             height: height,
-            left: Math.round((screen.availWidth - width) / 2),
+            left: 1,
             top: Math.round((screen.availHeight - height)/2)
         }
     });

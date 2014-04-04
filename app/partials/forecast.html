@@ -1,0 +1,34 @@
+<article id="forecast-widget" ng-style="{ left: (widget.x - 1) * 240+'px' , top: (widget.y - 1) * 225+'px'}" class="widget ui-draggable loaded" style="width: auto;">
+    <div class="widget-inner  widget-size-2x1 large-screen">
+        <header>
+            <h1>{{widget.title}}</h1>
+        </header>
+        <section class="widget-body list-widget text-widget">
+            <div class="widget-canvas">
+                <div id="forecast-chart">
+                    <img ng-src="{{tempsImage}}">
+                </div>
+                <div id="forecast-week">
+                    <div ng-repeat="day in widget.value" class="forecast-block">
+                        <div class="temps-weekday">{{day.date}}</div>
+                        <div class="forecast-img" ng-class="day.image"></div>
+                        <div class="temps">
+                            <span class="temps-high">{{day.high}}&deg;</span>
+                            <span class="temps-low">{{day.low}}&deg;</span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .widget-canvas -->
+        </section>
+        <footer style="display: none;">
+            <div class="inner">
+                <!--<span>Google Analytics</span>-->
+                <ul class="widget-actions">
+                    <li><a class="edit" href="#" title="Edit"></a></li>
+                    <li><a class="copy" href="#" title="Copy"></a></li>
+                    <li><a class="delete" href="#"></a></li>    
+                </ul>
+            </div>
+        </footer>
+    </div><!-- .widget-inner -->
+</article>

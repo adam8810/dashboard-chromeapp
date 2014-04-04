@@ -1,0 +1,31 @@
+<article ng-style="{ left: (widget.x-1) * 240, top: (widget.y-1) * 240}" class="widget custom-widgets ui-draggable loaded" style="width: auto;">
+    <div class="widget-inner  widget-size-1x2 large-screen">
+        <header>
+            <h1>{{widget.title}}{{msg}}</h1>
+        </header>
+        <section class="widget-body list-widget text-widget">
+            <div style="font-size: 20px" class="widget-canvas">
+                <ul>
+                    <li ng-repeat="item in widget.value">
+                        <div style="margin-bottom: 5px;">
+                            <div ng-class="{unchecked: item.status == 'needsAction', checked: item.status == 'completed'}" class="checkbox"></div>
+                            <h3 style="margin-bottom: 10px;font-size: 14px">{{item.title}}</h3>
+                            <!--<p>Added by Adam</p>-->
+                            <div style="clear:both;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- .widget-canvas -->
+        </section> 
+        <footer style="display: none;">
+            <div class="inner">
+                <span>Custom Widgets</span>
+                <ul class="widget-actions">
+                    <li><a class="edit" href="#" title="Edit"></a></li>
+                    <li><a class="copy" href="#" title="Copy"></a></li>
+                    <li><a class="delete" href="#"></a></li>  
+                </ul>
+            </div>
+        </footer>
+    </div><!-- .widget-inner -->
+</article>

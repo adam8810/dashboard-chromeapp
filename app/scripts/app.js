@@ -9,11 +9,17 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', { 
+      .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+    .config( [
+        '$compileProvider',
+        function( $compileProvider ) {
+            $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|blob:chrome-extension):/);
+        }
+    ]);

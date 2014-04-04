@@ -1,0 +1,34 @@
+<article ng-style="{
+            left:$index * 250
+        }" class="widget custom-widgets ui-draggable loaded" id="widget-14959179" style="top: 0px; width: auto;">
+    <div class="widget-inner  widget-size-1x2 large-screen">
+        <header>
+            <h1>{{widget.title}}</h1>
+        </header>
+        <a class="led success" href="#"></a>
+        <section class="widget-body list-widget text-widget">
+            <div class="widget-canvas">
+                <ul>
+                    <li ng-repeat="item in widget.value | limitTo: 5">
+                        <img style="float:left" src="{{item.image}}" alt="" width="50"/>
+                        <div style="margin-left: 60px;margin-bottom: 5px;">
+                            <h3>{{item.heading}} ({{item.vote_average}})</h3>
+                            <p>{{item.subheading}}</p>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- .widget-canvas -->
+        </section> 
+        <footer style="display: none;">
+            <div class="inner">
+                <span>Custom Widgets</span>
+                <ul class="widget-actions">
+                    <li><a class="edit" href="#" title="Edit"></a></li>
+                    <li><a class="copy" href="#" title="Copy"></a></li>
+                    <li><a class="delete" href="#"></a></li>  
+                </ul>
+            </div>
+        </footer>
+    </div><!-- .widget-inner -->
+</article>

@@ -1,0 +1,38 @@
+<article ng-style="{ left:$index * 250 }" class="widget google-analytics loaded ui-draggable" id="widget-14957025" style="top: 0px; width: auto;">
+        <div class="widget-inner  widget-size-1x1 large-screen">
+            <header>
+                <h1>{{widget.title}}</h1>
+            </header>
+            <a class="led success" href="#"></a>
+            <section class="widget-body geckometer-widget">
+                <div class="widget-canvas">
+
+                    <div class="value t-size-x48">{{widget.initialValue}}</div>
+                    <div class="scale">
+                        <div class="pointer-canvas" style="left: 50px; bottom: 0px;">
+                            <img alt="" class="pointer" src="img/meter/pointer.png" style="-webkit-transform-origin: bottom right;-webkit-transform: rotate({{-90 + (15 + widget.initialValue)}}deg);">
+                        </div>
+                    </div>
+                    <div class="min">
+                        <div class="t-size-x14 t-secondary">Min</div>
+                        <div class="t-size-x14 negative">0</div>
+                    </div>
+                    <div class="max">
+                        <div class="t-size-x14 t-secondary">Max</div>
+                        <div class="t-size-x14 positive">3</div>
+                    </div>
+                </div><!-- .widget-canvas -->
+            </section>
+            <footer>
+                <div class="inner">
+                    <span>Google Analytics</span>
+                    <ul class="widget-actions">
+                        <li><a class="edit" href="#" title="Edit"></a></li>
+
+                        <li><a class="copy" href="#" title="Copy"></a></li>
+                        <li><a class="delete" href="#"></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div><!-- .widget-inner -->
+    </article>

@@ -1,0 +1,25 @@
+.forecast-block {
+    float: left;
+    margin-right: 12px;
+    width: 60px;
+    padding-top: 25px;
+}
+
+.temps {
+    font-size: 15px;
+    padding: 0 6px;
+}
+
+.temps-weekday {
+    font-size: 20px;    
+    text-align: center;
+}
+
+.temps-high {
+    
+}
+
+.temps-low {
+    float: right;
+    color: #777;
+}
