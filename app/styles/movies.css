@@ -8,7 +8,6 @@
     width: 215px;
 }
 
-
 .movie-box.active {
     background: #EEE;
 }
@@ -55,6 +54,21 @@
     bottom:0;
 }
 
+#movie-info-box #header #rating {
+    background: #000;
+    color: #FFF;
+    position: absolute;
+    opacity: 0.8;
+    padding: 5px;
+    top:2px;
+    right:2px;
+    text-shadow: none;
+}
+
+#movie-info-box #header #rating.g {
+    background: green;
+}
+
 #movie-info-box h2 {
     margin-bottom: 2px;
 }
@@ -64,13 +78,3 @@
     margin-bottom: 2px;
 }
 
-.movie .progress {
-    height: 2px;
-    background: red;
-    -webkit-animation: movieProgress 30s;
-}
-
-/*-webkit-keyframes movieProgress {*/
-    /*from: {width:0px}*/
-    /*to: {width: 100px}*/
-/*}*/

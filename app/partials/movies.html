@@ -1,34 +1,35 @@
-<article ng-style="{ left: ((widget.x-1) * 240 + 'px'), top: ((widget.y-1) * 230) + 'px'}"
+<article ng-controller="MoviesCtrl" ng-style="{ left: ((widget.x-1) * 240 + 'px'), top: ((widget.y-1) * 240) + 'px'}"
          class="widget custom-widgets ui-draggable loaded" style="width: auto;">
-    <img ng-src="{{movietest}}">
-    {{movietest}}
     <div class="widget-inner  widget-size-2x2 large-screen movie">
         <header>
-            <h1>{{widget.title}}</h1>
+            <h1>Movies</h1>
         </header>
         <section class="widget-body list-widget text-widget">
             <div id="movie-list">
                 <ul>
-                    <li ng-repeat="item in widget.value | limitTo: 5">
-                        <div ng-class="{active: highlightClass($index)}" class="movie-box">
-                            <!--<img class="movie-image" ng-src="{{item.poster}}" alt="" width="50"/>-->
+                    <li ng-repeat="movie in movies | limitTo: 5">
+                        <div ng-class="{active: isHighlighted($index)}" class="movie-box">
+                            <img class="movie-image" load-image="{{movie.poster}}" load-delay="0" alt="" width="50"/>
 
                             <div class="movie-text">
-                                <h3>{{item.heading}}</h3>
+                                <h3>{{movie.heading}}</h3>
                                 <p>
-                                    {{item.release_date}}
+                                    {{movie.release_date}}<br/>
+                                    {{movie.mpaa_rating}}
+                                </p>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
+
             <div id="movie-info-box">
                 <div id="header">
-                    <!--<img ng-src="{{widget.value[highlightedMovie].backdrop}}" width="99%"/>-->
-                    <div id="rating">{{widget.value[highlightedMovie].mpaa_rating}}</div>
-                    <h2>{{widget.value[highlightedMovie].heading}}</h2>
+                    <img ng-src="{{currentBackdrop}}" width="99%"/>
+                    <div id="rating">{{highlightedMovie.mpaa_rating}}</div>
+                    <h2>{{highlightedMovie.heading}}</h2>
                 </div>
-                <p>{{widget.value[highlightedMovie].overview}}</p>
+                <p>{{highlightedMovie.overview}}</p>
             </div>
 
         </section>

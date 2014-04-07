@@ -1,25 +1,97 @@
+#forecast-widget .widget-body {
+    padding-top:0;
+}
 .forecast-block {
     float: left;
-    margin-right: 12px;
-    width: 60px;
-    padding-top: 25px;
+    margin-right: 5px;
+    width: 50px;
+    padding-top: 0px;
 }
 
+#forecast-week {
+    float:right;
+    margin-top: 50px;
+}
+
+#forecast-chart{
+    float:right;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+.forecast-img {
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    background-size: contain !important;
+}
+
+
+.forecast-img.chancerain {
+    background: url(../images/forecast/chancerain.png);
+}
+
+.forecast-img.chancesnow {
+    background: url(../images/forecast/chancesnow.png);
+}
+
+.forecast-img.chancetstorms {
+    background: url(../images/forecast/chancetstorms.png);
+}
+.forecast-img.chancesleet {
+    background: url(../images/forecast/chancesleet.png);
+}
+
+.forecast-img.clear {
+    background: url(../images/forecast/clear.png);
+}
+
+.forecast-img.cloudy {
+    background: url(../images/forecast/cloudy.png);
+}
+
+.forecast-img.fog {
+    background: url(../images/forecast/fog.png);
+}
+
+.forecast-img.mostlycloudy {
+    background: url(../images/forecast/mostlycloudy.png);
+}
+
+.forecast-img.partlycloudy {
+    background: url(../images/forecast/partlycloudy.png);
+}
+
+.forecast-img.rain {
+    background: url(../images/forecast/rain.png);
+}
+
+.forecast-img.snow {
+    background: url(../images/forecast/snow.png);
+}
+
+.forecast-img.tstorms {
+    background: url(../images/forecast/tstorms.png);
+}
+
+
+
+
 .temps {
-    font-size: 15px;
+    font-size: 10px;
     padding: 0 6px;
 }
 
 .temps-weekday {
-    font-size: 20px;    
+    font-size: 15px;
     text-align: center;
 }
 
 .temps-high {
-    
+    color: #FE9A2E;
 }
 
 .temps-low {
     float: right;
-    color: #777;
+    color: #2E9AFE;
 }

@@ -3,7 +3,7 @@
 This has been a project of mine for some time. Initially started as a plain website, then converted to
 a Google Chromecast app, now finally a Chrome Packaged app (which I see as the last part of the evolution).
 Once the project is in a more finalized state a Raspberry Pi running Linux will display this dashboard in
-fullscreen. 
+fullscreen.
 
 ## Current Modules
 - Internal home temperatures (Using an API I created that interacts with Nest Thermostats

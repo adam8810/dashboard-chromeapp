@@ -20,6 +20,7 @@ angular
     .config( [
         '$compileProvider',
         function( $compileProvider ) {
-            $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|blob:chrome-extension):/);
+            var oldWhiteList = $compileProvider.imgSrcSanitizationWhitelist();
+            $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|blob):|data:image\//);
         }
     ]);

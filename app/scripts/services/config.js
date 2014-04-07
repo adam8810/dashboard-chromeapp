@@ -3,6 +3,13 @@
 angular.module('dashboardChromeappApp')
   .service('Config', function Config() {
 
+        // Intervals for refreshing data (In Minutes)
+        this.timing = {
+//            movies:
+            temperature: 900000, // 15 * 60 * 1000
+            forecast: 900000 // 15 * 60 * 1000
+        };
+
         this.workTraffic = {
             center: {
                 latitude: 35.550000,

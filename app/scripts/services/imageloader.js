@@ -10,7 +10,6 @@ angular.module('dashboardChromeappApp')
     .service('Imageloader', function Imageloader($q) {
 
         this.get = function (url) {
-            console.log('url',url);
             var deferred = $q.defer();
 
             var xhr = new XMLHttpRequest();
@@ -18,12 +17,10 @@ angular.module('dashboardChromeappApp')
             xhr.responseType = 'blob';
 
             xhr.onload = function (e) {
-                console.log('res', window.webkitURL.createObjectURL(this.response));
                 deferred.resolve(window.webkitURL.createObjectURL(this.response));
             };
 
             xhr.send();
-
             return deferred.promise;
         };
 

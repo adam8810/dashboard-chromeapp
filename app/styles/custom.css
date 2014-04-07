@@ -1,10 +1,10 @@
 body {
-    background: #f0f0f0; 
+    background: #f0f0f0;
 }
 
 
-.clock-widget .time { 
-    background-color:rgb(233, 233, 233); 
+.clock-widget .time {
+    background-color:rgb(233, 233, 233);
 }
 
 
@@ -41,7 +41,7 @@ body {
 
 .map-widget path {
     fill: #e0e0e0;
-    stroke: #d5d5d5; 
+    stroke: #d5d5d5;
 }
 
 .map-widget circle {
@@ -53,7 +53,7 @@ body {
 }
 
 .text-widget .widget-canvas .slide-pagination {
-    background-color:rgb(233, 233, 233); 
+    background-color:rgb(233, 233, 233);
 }
 
 .widget {
