@@ -2,20 +2,16 @@
 
 angular.module('dashboardChromeappApp')
     .controller('MoviesCtrl', function ($scope, $interval, $http, Creds, Imageloader) {
-
         var currentHighlight = 0;
         $scope.movies = [];
         $scope.highlightedMovie = {};
-
 
         $http({method: 'GET', url: Creds.api + 'movies/now_playing.json'}).success(getUpcoming);
 
         function getUpcoming(movielist) {
             angular.forEach(movielist.results, function (movielist_item) {
-
                 // Get information for each movie
                 $http.get(Creds.api + 'movies/movie/?id=' + movielist_item.id).success(function (movie) {
-
                     $scope.movies.push({
                         heading: movie.title,
                         subheading: movie.tagline,
@@ -49,7 +45,7 @@ angular.module('dashboardChromeappApp')
             }
         }
 
-// Logic for highlighted current movie
+        // Logic for highlighted current movie
         $scope.isHighlighted = function (index) {
             return index == currentHighlight - 1;
         }

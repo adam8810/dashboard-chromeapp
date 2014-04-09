@@ -5,16 +5,19 @@
     "manifest_version": 2,
     "permissions": [
         "https://maps.google.com/",
+        "http://maps.gstatic.com",
+        "http://mt0.googleapis.com",
         "http://adam8810-test.apigee.net/",
         "http://cf2.imgobject.com/",
         "http://image.tmdb.org/",
         "https://home.nest.com/",
         "http://api.themoviedb.org/",
+
         "alarms",
         "storage",
-        "unlimitedStorage",
         "identity",
-        "fullscreen"
+        "fullscreen",
+        "power"
     ],
     "icons": {
         "16": "images/icon-16.png",

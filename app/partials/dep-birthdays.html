@@ -1,23 +1,20 @@
-<article ng-controller="BillsCtrl" ng-style="{ left: (widget.x-1) * 240 +'px' , top: (widget.y-1) * 240+'px'}"
-         class="widget custom-widgets ui-draggable loaded" style="width: auto;">
+<article ng-controller="BirthdaysCtrl" ng-style="{ left: (widget.x-1) * 240+'px' , top: (widget.y-1) * 240+'px'}" class="widget custom-widgets ui-draggable loaded" style="width: auto;">
     <div class="widget-inner  widget-size-1x2 large-screen">
         <header>
-            <h1>Bills</h1>
+            <h1>23Birthdays & Anniversaries</h1>
         </header>
         <section class="widget-body list-widget text-widget">
             <div class="widget-canvas">
                 <ul>
-                    <li ng-repeat="event in events | limitTo: 8">
-                        <div style="margin-bottom: 0px;">
+                    <li ng-repeat="event in events">
+                        <div style="margin-bottom: 5px;">
                             <h3>{{event.summary}}</h3>
-
                             <p>{{event.start.date}}</p>
-
                             <div style="clear:both;"></div>
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div><!-- .widget-canvas -->
         </section>
-    </div>
+    </div><!-- .widget-inner -->
 </article>

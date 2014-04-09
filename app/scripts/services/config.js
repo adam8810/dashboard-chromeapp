@@ -10,6 +10,11 @@ angular.module('dashboardChromeappApp')
             forecast: 900000 // 15 * 60 * 1000
         };
 
+        this.calendar = {
+            bills: 'fjg4l4qekujjgr89daqmvqc8a8@group.calendar.google.com',
+            events: 'le4l330vjb75cjcsfagnf3ff98@group.calendar.google.com'
+        }
+
         this.workTraffic = {
             center: {
                 latitude: 35.550000,

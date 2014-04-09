@@ -1,55 +1,58 @@
 'use strict';
 
 angular.module('dashboardChromeappApp')
-  .service('Calendar', function Calendar() {
-        this.bills = function() {
+    .service('Calendar', function Calendar($q, $http, Oauth2, Config) {
+        this.bills = function () {
             var deferred = $q.defer();
-            gapi.client.load('calendar', 'v3', function() {
-                var date = new Date();
-                var month = (date.getMonth()) + 1;
-                var year = date.getFullYear();
-                var numOfDays = Date.getDaysInMonth(year, month);
+            var calendarID = Config.calendar.bills;
+            var params = {
+                fields: 'items(summary,start)',
+                timeMin: encodeURIComponent(moment().toISOString()),
+                maxResults: 4,
+                orderBy: 'startTime',
+                singleEvents: true
+            };
 
-                var request = gapi.client.calendar.events.list({
-                    calendarId: 'fjg4l4qekujjgr89daqmvqc8a8@group.calendar.google.com',
-                    fields: 'items(summary,start)',
-                    timeMin: (new Date()).toISOString(), // start
-                    timeMax: (new Date(year + '-' + (month + 1) + '-' + numOfDays + ' 00:00:00')).toISOString(), // end
-                    orderBy: 'startTime',
-                    singleEvents: true
-                });
-
-                request.execute(function(resp) {
-                    deferred.resolve(resp.items);
-                });
+            getCalendar(calendarID, params).then(function(events) {
+                deferred.resolve(events);
             });
 
             return deferred.promise;
         };
 
-        this.events = function() {
+        this.events = function () {
             var deferred = $q.defer();
-            gapi.client.load('calendar', 'v3', function() {
-                var date = new Date();
-                var month = (date.getMonth()) + 1;
-                var year = date.getFullYear();
-                var numOfDays = Date.getDaysInMonth(year, month);
+            var calendarID = Config.calendar.events;
+            var params = {
+                fields: 'items(summary,start)',
+                timeMin: encodeURIComponent(moment().toISOString()),
+                maxResults: 4,
+                orderBy: 'startTime',
+                singleEvents: true
+            };
 
-                var request = gapi.client.calendar.events.list({
-                    calendarId: 'le4l330vjb75cjcsfagnf3ff98@group.calendar.google.com', // Contacts
-                    fields: 'items(summary,start)',
-                    timeMin: (new Date()).toISOString(), // start
-                    timeMax: (new Date(year + '-' + (month + 1) + '-' + numOfDays + ' 00:00:00')).toISOString(), // end
-                    orderBy: 'startTime',
-                    singleEvents: true
-                });
-
-                request.execute(function(resp) {
-                    console.log('anibirth',resp.items);
-                    deferred.resolve(resp.items);
-                });
+            getCalendar(calendarID, params).then(function(events) {
+                deferred.resolve(events);
             });
 
             return deferred.promise;
         };
-  });
+
+        function getCalendar(calendarID, params) {
+            var deferred = $q.defer();
+            var paramList = "?";
+            angular.forEach(params, function (param, key) {
+                paramList += '&' + key + '=' + param;
+            });
+
+            Oauth2.getToken().then(function (token) {
+                $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+
+                $http.get('https://www.googleapis.com/calendar/v3/calendars/' + calendarID + '/events' + paramList)
+                    .success(function (d) {
+                        deferred.resolve(d.items);
+                    });
+            });
+            return deferred.promise;
+        }
+    });

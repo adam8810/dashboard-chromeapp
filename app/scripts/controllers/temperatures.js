@@ -2,9 +2,7 @@
 
 angular.module('dashboardChromeappApp')
     .controller('TemperaturesCtrl', function ($scope, $interval, Temperatures, Config) {
-
         getNestTemperature();
-
         $interval(getNestTemperature, Config.timing.temperature * 1000);
 
         function getNestTemperature() {
