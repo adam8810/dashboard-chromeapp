@@ -1,15 +1,15 @@
 <article ng-controller="ForecastCtrl" id="forecast-widget" ng-style="{ left: (widget.x - 1) * 240+'px' , top: (widget.y - 1) * 240+'px'}" class="widget ui-draggable loaded" style="width: auto;">
     <div class="widget-inner  widget-size-2x1 large-screen">
         <header>
-            <h1>Forecast</h1>
+            <h1>Forecast<span style="float:right;font-style: italic">Last Update: {{forecastLastUpdate}}</span></h1>
         </header>
         <section class="widget-body list-widget text-widget">
             <div class="widget-canvas">
                 <div id="forecast-chart">
-                    <!--<img load-image="{{tempsImage}}">-->
+                    <img load-image="{{tempsImage}}">
                 </div>
                 <div id="forecast-week">
-                    <div ng-repeat="day in forecast" class="forecast-block">
+                    <div ng-repeat="day in forecast | limitTo: 8" class="forecast-block">
                         <div class="temps-weekday">{{day.date}}</div>
                         <div class="forecast-img" ng-class="day.image"></div>
                         <div class="temps">

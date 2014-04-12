@@ -7,8 +7,13 @@ angular.module('dashboardChromeappApp')
         this.timing = {
 //            movies:
             temperature: 900000, // 15 * 60 * 1000
-            forecast: 900000 // 15 * 60 * 1000
+            forecast: 900000, // 15 * 60 * 1000,
+            movies: 45000 // 45sec * 1000milli
         };
+
+        // Weather Underground Location
+        this.forecastState = 'OK';
+        this.forecastCity = 'Edmond';
 
         this.calendar = {
             bills: 'fjg4l4qekujjgr89daqmvqc8a8@group.calendar.google.com',

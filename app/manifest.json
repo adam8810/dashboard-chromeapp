@@ -1,17 +1,15 @@
 {
     "name": "Dashboard",
     "description": "Handy Dashboard",
-    "version": "1",
+    "version": "0.5.0",
     "manifest_version": 2,
     "permissions": [
-        "https://maps.google.com/",
-        "http://maps.gstatic.com",
-        "http://mt0.googleapis.com",
         "http://adam8810-test.apigee.net/",
         "http://cf2.imgobject.com/",
         "http://image.tmdb.org/",
         "https://home.nest.com/",
         "http://api.themoviedb.org/",
+        "http://api.wunderground.com/",
 
         "alarms",
         "storage",
@@ -41,5 +39,4 @@
             "https://www.googleapis.com/auth/calendar"
         ]
     }
-
 }

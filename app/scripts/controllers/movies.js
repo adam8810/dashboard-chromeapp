@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('dashboardChromeappApp')
-    .controller('MoviesCtrl', function ($scope, $interval, $http, Creds, Imageloader) {
+    .controller('MoviesCtrl', function ($scope, $interval, $http, Creds, Config, Imageloader) {
         var currentHighlight = 0;
         $scope.movies = [];
         $scope.highlightedMovie = {};
 
         $http({method: 'GET', url: Creds.api + 'movies/now_playing.json'}).success(getUpcoming);
+
 
         function getUpcoming(movielist) {
             angular.forEach(movielist.results, function (movielist_item) {
@@ -18,15 +19,15 @@ angular.module('dashboardChromeappApp')
                         mpaa_rating: movie.mpaa_rating ? movie.mpaa_rating : 'NR',
                         release_date: movie.release_date_full,
                         overview: movie.overview,
-                        poster: movie.poster != null ? 'http://cf2.imgobject.com/t/p/w92' + movie.poster : null,
-                        backdrop: 'http://cf2.imgobject.com/t/p/w300' + movie.backdrop
+                        poster: movie.poster != null ? 'http://cf2.imgobject.com/t/p/w92' + movie.poster : '/images/movies/poster1.png',
+                        backdrop: movie.backdrop != null ? 'http://cf2.imgobject.com/t/p/w300' + movie.backdrop : '/images/movies/backdrop1.png'
                     });
                 });
             });
         }
 
         // Iterate through listed movies
-        $interval(updateHighlightedMovie, 5000);
+        $interval(updateHighlightedMovie, Config.timing.movies);
 
         function updateHighlightedMovie() {
             $scope.highlightedMovie = $scope.movies[currentHighlight];

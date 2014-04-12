@@ -5,3 +5,4 @@ dist
 app/bower_components
 .idea/
 scripts/services/creds.js
+scripts/services/config.js

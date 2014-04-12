@@ -3,20 +3,20 @@
 }
 .forecast-block {
     float: left;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
     width: 50px;
     padding-top: 0px;
 }
 
 #forecast-week {
     float:right;
-    margin-top: 50px;
+    margin-right: 20px;
 }
 
 #forecast-chart{
     float:right;
     margin-right: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .forecast-img {
