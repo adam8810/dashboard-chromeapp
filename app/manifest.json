@@ -1,20 +1,21 @@
 {
     "name": "Dashboard",
     "description": "Handy Dashboard",
-    "version": "1",
+    "version": "0.6.0",
     "manifest_version": 2,
     "permissions": [
-        "https://maps.google.com/",
         "http://adam8810-test.apigee.net/",
         "http://cf2.imgobject.com/",
         "http://image.tmdb.org/",
         "https://home.nest.com/",
         "http://api.themoviedb.org/",
+        "http://api.wunderground.com/",
+
         "alarms",
         "storage",
-        "unlimitedStorage",
         "identity",
-        "fullscreen"
+        "fullscreen",
+        "power"
     ],
     "icons": {
         "16": "images/icon-16.png",
@@ -28,7 +29,7 @@
             ]
         }
     },
-    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAue08yxXZIQugP65Iir44vKvFXbXLq72H5gcnw/X4Qt/yHnkNI3o1XDFNZtwU79Fdt672mgO1vy3e5BSfSLF1RoSjXt7LJSs3KD7/mTj7P/xoOu0lOqBL2PGEX0oyWXGpI4/4yS8L0e6fmKbOLhPbPHQD3OSbedni4YtnQHym1iI4B+sXS9yvHPezYA6UoxGkIqWrioaMwQO5w6TtmBTdwqtEjC2YkxBvdCihoD2Y7u8je1mAkU95HOB42yhO2wwyahQeaamBk2nB4JcZOP0xnX80rNNCL6d/UulgAvAvDWzJFt03ArwqhA7veLvoQ7uFl4Cuqz6wgPKxH9dzp8nqSQIDAQAB",
+//    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAue08yxXZIQugP65Iir44vKvFXbXLq72H5gcnw/X4Qt/yHnkNI3o1XDFNZtwU79Fdt672mgO1vy3e5BSfSLF1RoSjXt7LJSs3KD7/mTj7P/xoOu0lOqBL2PGEX0oyWXGpI4/4yS8L0e6fmKbOLhPbPHQD3OSbedni4YtnQHym1iI4B+sXS9yvHPezYA6UoxGkIqWrioaMwQO5w6TtmBTdwqtEjC2YkxBvdCihoD2Y7u8je1mAkU95HOB42yhO2wwyahQeaamBk2nB4JcZOP0xnX80rNNCL6d/UulgAvAvDWzJFt03ArwqhA7veLvoQ7uFl4Cuqz6wgPKxH9dzp8nqSQIDAQAB",
     "oauth2": {
         "client_id": "60144512353-6j377avvl8jq09kp27d7kjb7fcj0jdmr.apps.googleusercontent.com",
         "scopes": [
@@ -38,5 +39,4 @@
             "https://www.googleapis.com/auth/calendar"
         ]
     }
-
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 /* global cast, gapi */
-angular.module('dashboardChromeappApp').controller('MainCtrl', function ($scope, $http, $resource, $interval, $timeout, $q, Config, Creds, Calendar, Auth, Imageloader) {
+angular.module('dashboardChromeappApp').controller('MainCtrl', function ($scope) {
 
 ////    Imageloader.get('http://cf2.imgobject.com/t/p/w92/9IpbJ2F3bhSRsV0mQhAvi0ZtzoY.jpg').then(function(d) {
 ////        $scope.movietest = d;
