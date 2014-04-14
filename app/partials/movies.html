@@ -22,10 +22,9 @@
                     </li>
                 </ul>
             </div>
-
-            <div id="movie-info-box">
+            <div ng-show="highlightedMovie.backdrop !== undefined" id="movie-info-box">
                 <div id="header">
-                    <img ng-src="{{currentBackdrop}}" width="99%"/>
+                    <img load-image="{{highlightedMovie.backdrop}}" width="99%"/>
                     <div id="rating">{{highlightedMovie.mpaa_rating}}</div>
                     <h2>{{highlightedMovie.heading}}</h2>
                 </div>

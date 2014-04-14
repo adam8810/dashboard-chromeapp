@@ -14,7 +14,9 @@ angular.module('dashboardChromeappApp')
                         date: day.date.weekday_short,
                         image: day.icon,
                         high: day.high.fahrenheit,
-                        low: day.low.fahrenheit
+                        low: day.low.fahrenheit,
+                        wind: day.maxwind.mph,
+                        direction: day.maxwind.dir
                     });
                 });
                 deferred.resolve(daily);
