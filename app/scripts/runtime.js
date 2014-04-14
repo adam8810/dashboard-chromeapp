@@ -16,7 +16,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
 //            top: Math.round((screen.availHeight - height)/2)
 //        }
     }, function(app) {
-//        app.fullscreen();
+        app.fullscreen();
 
         chrome.alarms.create('update-check',{periodInMinutes:60});
 
